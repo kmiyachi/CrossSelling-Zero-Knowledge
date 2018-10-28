@@ -70,6 +70,11 @@ docker cp <DOCKER ID>:root/ZoKrates/variables.inf ./
 ```
 
 6. Copy the Proof File to Current Project 'proofs' Directory
+
+```
+docker cp <DOCKER ID>:<Path to Proof File> ./proofs
+```
+
 7. Run ./convertproof.py inside the 'proofs' directory. This outputs the proof information as JSON object in the form of userID: [A, A_p, B, B_p, C, C_p, H, K] as well as correct types to be used in Web3.
 8. Javascript in apps.js parses this json and has associated proof variables to user
 
@@ -77,6 +82,7 @@ docker cp <DOCKER ID>:root/ZoKrates/variables.inf ./
 
 1. **userHash as input to ZoKrates High-Level Code**: We talked about how it would be good if we had a userHash to be the input to verifyTx, so the third-party could confirm the identity of the person they were confirming the VIP Score of. However, .code functions that are compiled by ZoKrates only took in integers as parameters and therefore the userHash was not accepted. I settled on just inputting userID which simply the number of total users when they were added
 2. **call() vs sendTransaction()**: SendTransaction invokes verifyTx, modifies the state of the contract, and puts the transaction on chain to be mined. However, it doesn't return the value of verifyTx just a transactionHash. We need verifyTx on-chain for third parties to confirm and trust the system, but we also need the value to display in the UI. I beleive the preferred solution is to log an event and then have web3 get that event and return that to be dispalyed. However, I just returned the call() of verifyTX for simplicity and actually think it saves gas as .call() only simulates a transaction but discards all state changes and therefore uses no gas.
+3. **VIP Score Algorithm**: The algorithm used to calculate VIP Score in both the regular ethereum implementation and ZoKrates implementation is basic. It would be nice to implement some simple machine-learning classifier based on features as well as have the third-party input different weights they would like to use or pick from a variety of algorithms that would be used by ZoKrates to generate the proof and create the verifier contract.
 
 References:
 
