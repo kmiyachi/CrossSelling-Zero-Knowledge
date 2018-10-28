@@ -11,9 +11,9 @@ App = {
       for (i = 0; i < data.length; i++) {
         petTemplate.find(".panel-title").text(data[i].name);
         petTemplate.find(".id").text(data[i].id);
-        petTemplate.find(".vip").text(data[i].VIP);
+        petTemplate.find(".vip").attr("data-vip", data[i].id);
         petTemplate.find(".btn-calc").attr("data-id", data[i].id);
-        petTemplate.find(".btn-calc").attr("data-vip", data[i].VIP);
+        //petTemplate.find(".btn-calc").attr("data-vip", data[i].VIP);
         petsRow.append(petTemplate.html());
       }
     });
@@ -92,7 +92,9 @@ App = {
     event.preventDefault();
     console.log("BUTTON WAS PRESSED");
     var petId = parseInt($(event.target).data("id"));
-    var vipScore = parseInt($(event.target).data("vip"));
+    var vipScore = $(`input[data-vip='${petId}']`).val();
+    console.log(vipScore);
+    //var vipScore = parseInt($(event.target).data("vip"));
     console.log(vipScore);
     var VIPInstance;
     web3.eth.getAccounts(function(error, accounts) {
@@ -108,8 +110,6 @@ App = {
           // Execute adopt as a transaction by sending account
           console.log("PET ID: " + petId);
           console.log("Instance: " + instance);
-          VIPInstance.addUser("NEW", { from: account }).then(console.log);
-          //return VIPInstance.getUser(petId, { from: account });
           return [petId, vipScore];
         })
         .then(function(io) {
