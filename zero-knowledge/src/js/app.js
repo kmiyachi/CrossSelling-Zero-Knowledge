@@ -72,7 +72,7 @@ App = {
         VIPInstance = instance;
         console.log(VIPInstance);
         var p = proofs[id];
-        VIPInstance.verifyTx.sendTransaction(...p, [id, vip]);
+        VIPInstance.verifyTx.sendTransaction(...p, [id, vip]).then(console.log);
         return VIPInstance.verifyTx.call(...p, [id, vip]);
       })
       .then(function(score) {
