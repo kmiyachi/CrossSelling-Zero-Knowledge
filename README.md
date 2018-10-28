@@ -31,7 +31,7 @@ cd zero_knowledge
 
 **README for Usage is in the zero_knowledge directory**
 
-###Proof Generation:
+### Proof Generation:
 
 1. Download [Zokrates](https://github.com/JacobEberhardt/ZoKrates) and run pre-built docker instance
 
