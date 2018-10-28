@@ -1,0 +1,2 @@
+def main(id, private balance, private home, private loan, private us, private ps, private debt):
+    return balance + (home * 100) - (loan * 500) + (us * 10) + (ps * 100) - (debt * 2)

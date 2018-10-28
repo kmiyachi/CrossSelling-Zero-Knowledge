@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Ken",
+    "VIP": 109290
+  },
+  {
+    "id": 2,
+    "name": "Yijia",
+    "VIP": 1007699
+  },
+  {
+    "id": 3,
+    "name": "Nick",
+    "VIP": 7795
+  },
+  {
+    "id": 4,
+    "name": "Melissa",
+    "VIP": 3741
+  },
+  {
+    "id": 5,
+    "name": "Mari",
+    "VIP": 2369
+  },
+  {
+    "id": 6,
+    "name": "Nicoli",
+    "VIP": 2021
+  },
+  {
+    "id": 7,
+    "name": "Elon",
+    "VIP": 11429
+  },
+  {
+    "id": 8,
+    "name": "Benjamin",
+    "VIP": 1231267
+  },
+  {
+    "id": 9,
+    "name": "Franklin",
+    "VIP": 68529
+  },
+  {
+    "id": 10,
+    "name": "Franz",
+    "VIP": 1544
+  }
+]

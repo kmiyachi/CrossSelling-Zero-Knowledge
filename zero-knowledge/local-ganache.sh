@@ -1,0 +1,1 @@
+ganache-cli -m "the great brown fox jumped over the lazy dog"

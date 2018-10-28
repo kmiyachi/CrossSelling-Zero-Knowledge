@@ -1,0 +1,29 @@
+Generating proof...
+Using Witness: {"ps": 74, "home": 0, "debt": 3242, "us": 34, "id": 6, "~one": 1, "~out_0": 2021, "loan": 0, "balance": 765}
+Public inputs: [1, 6, 2021]
+Private inputs: [0, 765, 74, 34, 0, 3242]
+* Elements of w skipped: 1 (25.00%)
+* Elements of w processed with special addition: 0 (0.00%)
+* Elements of w remaining: 3 (75.00%)
+* Elements of w skipped: 0 (-nan%)
+* Elements of w processed with special addition: 0 (-nan%)
+* Elements of w remaining: 0 (-nan%)
+* Elements of w skipped: 1 (33.33%)
+* Elements of w processed with special addition: 0 (0.00%)
+* Elements of w remaining: 2 (66.67%)
+* Elements of w skipped: 2 (25.00%)
+* Elements of w processed with special addition: 0 (0.00%)
+* Elements of w remaining: 6 (75.00%)
+* G1 elements in proof: 7
+* G2 elements in proof: 1
+* Proof size in bits: 2294
+Proof:
+A = 0x1f8a9532a586386b515c7b9b0a0ef47ca5c14445c8cc83923e51378b12b10a1b, 0xdc820dc3f58fef3b9f1c3511fa6dc97df32002c0b0e384dd4e15f61b4496f57
+A_p = 0x197f524aa3d09149c42c5b1ad49ea8ad65b968133584cc6ebe64e083937f0e22, 0x27544184d45024905935125de68a1e9e32889e4adfd5605dd15f016f4d05218d
+B = [0x293a551c35ef27dfb3d00aa186201ca5c048a8c4c355a2c94491bcf1eb40d07, 0x22feb2da4240994de2277b454f48ccac2b0eeeb368d93e77b7ce928283e1a175], [0xf5b0cb67125dac808306698e4e3e59bc6fb9a62df9f617a104025e0e0f1a71b, 0x1f4081edb3128376d476ee578b5e83c1511624d21a1d985313a4805d5bb92f1a]
+B_p = 0x252a4a027a1c485999ff40f6cecaa5870d126e4248ab31e3ee9196ddb739adeb, 0xce618e1c6f9b6f7ef5d7c4cb8f73c203443389aa9a33284bc5822e601f1df1d
+C = 0x1e6cddf6679bb59d9797453167b4447e1fc624808b4c13805edaaabd13d62599, 0x1e05627c3c5ccdde327e46ae31a7030f1e689d9a4d39f148c2d21a7f3bfabac3
+C_p = 0x1c7c8dac02e2628a2685f79e301dbbf6ba75b2eafd8c9fc5db383e96d3fefa6d, 0x1050a1e7a6f822401cf89489b47da2c22ef1347e2e84f7e5a9addde289350791
+H = 0x9c8ea3454084217f916c8ff7b63dafca1e38f10db7cfb4759113f19984f823f, 0x107db3587bdd6b314e1d83da11e45ee4d7a76a222c78651f47299f100b9b959e
+K = 0xd8c54057f463a4212b7adf45af97066cc1879e188f117e0a370eeaa093aad76, 0x2b9e391194464af08da0ea0e731a330b4504b62c1b776c47ab2f0fb7c95a37ec
+generate-proof successful: true

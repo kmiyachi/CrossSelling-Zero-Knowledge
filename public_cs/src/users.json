@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Ken",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 2,
+    "name": "Yijia",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 3,
+    "name": "Nick",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 4,
+    "name": "Melissa",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 5,
+    "name": "Mari",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 6,
+    "name": "Nicoli",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 7,
+    "name": "Elon",
+    "VIP": 7
+  },
+  {
+    "id": 8,
+    "name": "Benjamin",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 9,
+    "name": "Franklin",
+    "VIP": "Not Yet Calculated"
+  },
+  {
+    "id": 10,
+    "name": "Franz",
+    "VIP": "Not Yet Calculated"
+  }
+]

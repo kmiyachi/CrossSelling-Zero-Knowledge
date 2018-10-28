@@ -1,0 +1,27 @@
+{
+  "name": "pet-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "git": "^0.1.5",
+    "truffle": "^4.1.14",
+    "truffle-artifactor": "^3.0.7",
+    "truffle-compile": "^3.0.13",
+    "truffle-contract-sources": "0.0.2",
+    "truffle-deployer": "^2.0.7",
+    "web3": "^1.0.0-beta.36"
+  }
+}
