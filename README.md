@@ -77,7 +77,6 @@ docker cp <DOCKER ID>:<Path to Proof File> ./proofs
 ```
 
 7. Run ./convertproof.py inside the 'proofs' directory. This outputs the proof information as JSON object in the form of userID: [A, A_p, B, B_p, C, C_p, H, K] as well as correct types to be used in Web3.
-8. Javascript in apps.js parses this json and has associated proof variables to user
 
 ### Issues
 
