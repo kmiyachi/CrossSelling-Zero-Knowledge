@@ -6,6 +6,7 @@
 
 ```
 git clone https://github.com/kmiyachi/Origo_CrossSelling.git
+cd Origo_CrossSelling
 ```
 
 2. Install global blockchain modules
