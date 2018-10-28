@@ -3,17 +3,17 @@ App = {
   contracts: {},
 
   init: function() {
-    // Load pets.
+    // Load users.
     jQuery.getJSON("../users.json", function(data) {
-      var petsRow = $("#petsRow");
-      var petTemplate = $("#petTemplate");
+      var usersRow = $("#userRow");
+      var userTemplate = $("#userTemplate");
 
       for (i = 0; i < data.length; i++) {
-        petTemplate.find(".panel-title").text(data[i].name);
-        petTemplate.find(".id").text(data[i].id);
-        petTemplate.find(".vip").text(data[i].VIP);
-        petTemplate.find(".btn-calc").attr("data-id", data[i].id);
-        petsRow.append(petTemplate.html());
+        userTemplate.find(".panel-title").text(data[i].name);
+        userTemplate.find(".id").text(data[i].id);
+        userTemplate.find(".vip").text(data[i].VIP);
+        userTemplate.find(".btn-calc").attr("data-id", data[i].id);
+        usersRow.append(userTemplate.html());
       }
     });
     return App.initWeb3();
@@ -42,7 +42,7 @@ App = {
       App.contracts.VIP_Level = TruffleContract(VIPArtifact);
       // Set the provider for our contract
       App.contracts.VIP_Level.setProvider(App.web3Provider);
-      // Use our contract to retrieve and mark the adopted pets
+      // Use our contract to retrieve and mark the adopted users
       console.log(App.contracts.VIP_Level);
       //return App.updateVIP();
     });
@@ -60,11 +60,12 @@ App = {
       .then(function(instance) {
         VIPInstance = instance;
         console.log(VIPInstance);
+        VIPInstance.calculate_VIP.sendTransaction(id);
         return VIPInstance.calculate_VIP.call(id);
       })
       .then(function(score) {
         console.log("SCORE: " + score);
-        $(".panel-pet")
+        $(".panel-user")
           .eq(id - 1)
           .find("span")
           .text(score)
@@ -78,23 +79,21 @@ App = {
   handleAdopt: function(event) {
     event.preventDefault();
     console.log("BUTTON WAS PRESSED");
-    var petId = parseInt($(event.target).data("id"));
+    var userId = parseInt($(event.target).data("id"));
     var VIPInstance;
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
       }
-
+      console.log(userId);
       var account = accounts[0];
       App.contracts.VIP_Level.deployed()
         .then(function(instance) {
           VIPInstance = instance;
           // Execute adopt as a transaction by sending account
-          console.log("PET ID: " + petId);
+          console.log("user ID: " + userId);
           console.log("Instance: " + instance);
-          VIPInstance.addUser("NEW", { from: account }).then(console.log);
-          //return VIPInstance.getUser(petId, { from: account });
-          return petId;
+          return userId;
         })
         .then(function(id) {
           return App.updateVIP(id);

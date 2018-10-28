@@ -3,18 +3,18 @@ App = {
   contracts: {},
   proofs: {},
   init: function() {
-    // Load pets.
+    // Load users.
     jQuery.getJSON("../users.json", function(data) {
-      var petsRow = $("#petsRow");
-      var petTemplate = $("#petTemplate");
+      var usersRow = $("#usersRow");
+      var userTemplate = $("#userTemplate");
 
       for (i = 0; i < data.length; i++) {
-        petTemplate.find(".panel-title").text(data[i].name);
-        petTemplate.find(".id").text(data[i].id);
-        petTemplate.find(".vip").attr("data-vip", data[i].id);
-        petTemplate.find(".btn-calc").attr("data-id", data[i].id);
-        //petTemplate.find(".btn-calc").attr("data-vip", data[i].VIP);
-        petsRow.append(petTemplate.html());
+        userTemplate.find(".panel-title").text(data[i].name);
+        userTemplate.find(".id").text(data[i].id);
+        userTemplate.find(".vip").attr("data-vip", data[i].id);
+        userTemplate.find(".btn-calc").attr("data-id", data[i].id);
+        //userTemplate.find(".btn-calc").attr("data-vip", data[i].VIP);
+        usersRow.append(userTemplate.html());
       }
     });
     return App.initWeb3();
@@ -44,7 +44,7 @@ App = {
       App.contracts.Verifier = TruffleContract(VIPArtifact);
       // Set the provider for our contract
       App.contracts.Verifier.setProvider(App.web3Provider);
-      // Use our contract to retrieve and mark the adopted pets
+      // Use our contract to retrieve and mark the adopted users
       console.log(App.contracts.Verifier);
       //return App.updateVIP();
     });
@@ -77,7 +77,7 @@ App = {
       })
       .then(function(score) {
         console.log("SCORE: " + score);
-        $(".panel-pet")
+        $(".panel-user")
           .eq(id - 1)
           .find("span")
           .text(score)
@@ -91,8 +91,8 @@ App = {
   handleAdopt: function(event) {
     event.preventDefault();
     console.log("BUTTON WAS PRESSED");
-    var petId = parseInt($(event.target).data("id"));
-    var vipScore = $(`input[data-vip='${petId}']`).val();
+    var userId = parseInt($(event.target).data("id"));
+    var vipScore = $(`input[data-vip='${userId}']`).val();
     console.log(vipScore);
     //var vipScore = parseInt($(event.target).data("vip"));
     console.log(vipScore);
@@ -108,9 +108,9 @@ App = {
         .then(function(instance) {
           VIPInstance = instance;
           // Execute adopt as a transaction by sending account
-          console.log("PET ID: " + petId);
+          console.log("user ID: " + userId);
           console.log("Instance: " + instance);
-          return [petId, vipScore];
+          return [userId, vipScore];
         })
         .then(function(io) {
           return App.updateVIP(io[0], io[1]);
