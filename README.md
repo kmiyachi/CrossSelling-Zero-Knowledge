@@ -5,7 +5,7 @@
 1. Clone the repo
 
 ```
-git clone https://github.com/kmiyachi/Origo_CrossSelling.git
+git clone https://github.com/kmiyachi/CrossSelling-Zero-Knowledge.git
 cd Origo_CrossSelling
 ```
 
