@@ -6,7 +6,7 @@
 
 ```
 git clone https://github.com/kmiyachi/CrossSelling-Zero-Knowledge.git
-cd Origo_CrossSelling
+cd CrossSelling-Zero-Knowledge
 ```
 
 2. Install global blockchain modules
